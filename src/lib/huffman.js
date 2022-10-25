@@ -115,7 +115,7 @@ function huffmanSchemeAlgo(probabilities, radix) {
  *  }
  * }
  */
-export function huffmanScheme(probabilities, radix) {
+export function huffmanScheme(probabilities, radix = 2, mappingCode = undefined) {
   // Step 1: Normalize the probabilities
   probabilities = normalizeProbabilities(probabilities);
 
@@ -124,9 +124,17 @@ export function huffmanScheme(probabilities, radix) {
 
   // Step 3: Perform Huffman encoding algorithm
   let indexMap = {};
-  probabilities.forEach((value, idx) => {
-    indexMap["s" + (idx + 1).toString()] = idx;
-  })
+  if (mappingCode === undefined) {
+    probabilities.forEach((value, idx) => {
+      indexMap["s" + (idx + 1).toString()] = idx;
+    });
+  } else {
+    probabilities.forEach((value, idx) => {
+      indexMap[mappingCode[idx]] = idx;
+    });
+  }
+  
+
   return {
     probabilities,
     radix,
@@ -138,5 +146,5 @@ export function huffmanScheme(probabilities, radix) {
 // ----------------------------------------------------------------
 // Some local testing sanity console.log
 
-//console.log(huffmanScheme([0.3, 0.2, 0.15, 0.05, 0.1, 0.1, 0.075, 0.025], 3).encoding);
+// console.log(huffmanScheme([0.3, 0.2, 0.15, 0.05, 0.1, 0.1, 0.075, 0.025], 3).encoding);
 

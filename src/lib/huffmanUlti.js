@@ -14,7 +14,7 @@ export function getAverageLength(huffmanScheme) {
   return getFraction(sumLength.toFixed(6));
 }
 
-function getFraction(decimal) {
+export function getFraction(decimal) {
   for(var denominator = 1; (decimal * denominator) % 1 !== 0; denominator++);
   return {numerator: decimal * denominator, denominator: denominator};
 }
@@ -25,6 +25,6 @@ export function getIndexEncoding(huffmanScheme, str) {
 
 import {huffmanScheme} from './huffman.js'
 
-let scheme = huffmanScheme([0.3, 0.2, 0.15, 0.05, 0.1, 0.1, 0.075, 0.025], 2);
+/* let scheme = huffmanScheme([0.3, 0.2, 0.15, 0.05, 0.1, 0.1, 0.075, 0.025], 2);
 console.log(getAverageLength(scheme)); 
-console.log(getIndexEncoding(scheme, 's2')); 
+console.log(getIndexEncoding(scheme, 's2'));  */
