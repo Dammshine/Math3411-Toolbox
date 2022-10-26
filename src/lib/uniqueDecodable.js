@@ -4,7 +4,12 @@
  * @param {*} code a string representing the code check
  * @param {*} arr use to store attempts
  */
- function checkUniqueDecodableHelper(codewords, code, arr) {
+function pickOne(codewords) {
+  let idx = Math.floor(Math.random() * codewords.length);
+  return codewords[idx];
+}
+
+function checkUniqueDecodableHelper(codewords, code, arr) {
   // If one code can be express by the other, then it's not uniquely decodable
   // Otherwise it is
 
@@ -17,6 +22,21 @@
   for (let idx of arr) str += codewords[idx]; 
   // console.log(codewords, code, str);
   for (let i = 1; i <= Math.ceil(str.length / code.length); i++) {
+    if (i > 1) {
+      for (let j = 0; j < codewords.length; j++) {
+        if (str === code.repeat(i - 1) + codewords[j] 
+        || str === codewords[j] + code.repeat(i - 1)
+        || str === code.repeat(i)) {
+          return false;
+        }
+
+        for (let ran = 0; ran < 10; ran++) {
+          if (str === code + pickOne(codewords).repeat(i - 1)) {
+            return false;
+          }
+        }
+      }
+    }
     if (str === code.repeat(i)) {
       /* console.log(arr);
       console.log(codewords, code); */
@@ -63,3 +83,5 @@ export function findUniqueDecodable(codewords, options, isDecodable=true) {
   }
   return "Not found";
 }
+
+// Sardinas-Patterson Algorithm
