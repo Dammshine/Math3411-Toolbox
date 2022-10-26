@@ -9,18 +9,21 @@
   // Otherwise it is
 
   // Base case
-  if (arr.length > code.length) return true;
+  if (arr.length > (code.length * 2)) return true;
  
 
   // Check current
   let str = "";
   for (let idx of arr) str += codewords[idx]; 
   // console.log(codewords, code, str);
-  if (str === code) {
-    /* console.log(arr);
-    console.log(codewords, code); */
-    return false;
+  for (let i = 1; i <= Math.ceil(str.length / code.length); i++) {
+    if (str === code.repeat(i)) {
+      /* console.log(arr);
+      console.log(codewords, code); */
+      return false;
+    }
   }
+  
 
   // Check all possible outcome
   for (let i = 0; i < codewords.length; i++) {

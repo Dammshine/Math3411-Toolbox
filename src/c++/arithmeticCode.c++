@@ -63,17 +63,19 @@ int arithmetic(){
 		arr[ch].range_to= range_from+ arr[ch].prob;
 		range_from= arr[ch].range_to;
 	}
-	cout<<"Symbol\tProbability\tRange_from\tRange_to\n";
-	cout<<"----------------------------------------------------\n";
-	for(int i=0; i<ar.size(); i++){
-		char ch= ar[i];
-		cout<<ch<<"\t"<<arr[ch].prob<<"\t\t"<<arr[ch].range_from<<"\t\t"<<arr[ch].range_to<<endl;
-	}
-	cout<<endl;
 
 	while (true) {
 		system("cls");
-		cout<<"\n\nEncode or Decode?\n\t1. encode\n\t2. decode\n";
+		cout<<"Symbol\tProbability\tRange_from\tRange_to\n";
+		cout<<"----------------------------------------------------\n";
+		for(int i=0; i<ar.size(); i++){
+			char ch= ar[i];
+			cout<<ch<<"\t"<<arr[ch].prob<<"\t\t"<<arr[ch].range_from<<"\t\t"<<arr[ch].range_to<<endl;
+		}
+		cout<<endl;
+
+		
+		cout<<"Encode or Decode?\n\t1. encode\n\t2. decode\n";
 		string command;
 		cin >> command;
 		if (command == "encode" || command == "1") {
@@ -84,12 +86,30 @@ int arithmetic(){
 			cout<<"Code word for "<<s<<" is: "<<code_word<<endl;
 			string text= decoding(arr, code_word, s.size());
 			cout<<"Text for "<<code_word<<" is: "<<text<<endl;
+
+			cout<<"Back to the menu?\n\t1. yes\n\t2. no\n";
+			string readLine;
+			cin >> readLine;
+			if (readLine == "yes") {
+				;
+			} else {
+				break;
+			}
 		} else if (command == "decode" || command == "2") {
 			cout<<"Enter code: ";
 			double code_word;
 			cin >> code_word;
 			string text= decoding(arr, code_word, 10);
 			cout<<"Text for "<<code_word<<" is: "<<text<<endl;
+
+			cout<<"Back to the menu?\n\t1. yes\n\t2. no\n";
+			string readLine;
+			cin >> readLine;
+			if (readLine == "yes") {
+				;
+			} else {
+				break;
+			}
 		}
 	}
 	

@@ -1,3 +1,6 @@
+import * as Math from 'mathjs';
+const { eigs, multiply, column, transpose, fraction } = Math;
+import {huffmanScheme} from './huffman.js'
 
 
 /**
@@ -6,12 +9,14 @@
  */
 export function getAverageLength(huffmanScheme) {
   // I can either perform Knuth algorithm or just use product
-  let sumLength = 0;
-  for (let [index, str] of Object.entries(huffmanScheme.encoding)) {
-    sumLength += (str.length * huffmanScheme.probabilities[index]);
+  let sumLength = fraction('0/1');
+  for (let [key, value] of Object.entries(huffmanScheme.indexMap)) {
+    let frac = getFraction(huffmanScheme.probabilities[value]);
+    sumLength = sumLength.add(fraction(frac.numerator * huffmanScheme.encoding[value].length, frac.denominator));
+    // console.log(frac);
   }
-  console.log(sumLength);
-  return getFraction(sumLength.toFixed(8));
+
+  return sumLength;
 }
 
 export function getFraction(decimal) {
@@ -23,7 +28,14 @@ export function getIndexEncoding(huffmanScheme, str) {
   return huffmanScheme.encoding[huffmanScheme.indexMap[str]];
 }
 
-import {huffmanScheme} from './huffman.js'
+export function printAverageLength(huffmanScheme) {
+  for (let [key, value] of Object.entries(huffmanScheme.indexMap)) {
+    let frac = getFraction(huffmanScheme.probabilities[value]);
+    console.log(key + ": "+ huffmanScheme.encoding[value] + " " + frac.numerator + "/" + frac.denominator);
+  }
+}
+
+import { getAverageLengthFromMarkov } from './huffmanMarkovCode.js';
 
 /* let scheme = huffmanScheme([2/13, 2/13, 2/13, 2/13, 2/13, 2/13, 1/13], 4);
 console.log(scheme); */
