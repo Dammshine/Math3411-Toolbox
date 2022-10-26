@@ -20,6 +20,7 @@ function checkUniqueDecodableHelper(codewords, code, arr) {
   // Check current
   let str = "";
   for (let idx of arr) str += codewords[idx]; 
+  if (str.length > code.length) return true;
   // console.log(codewords, code, str);
   for (let i = 1; i <= Math.ceil(str.length / code.length); i++) {
     if (i > 1) {
