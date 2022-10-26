@@ -71,7 +71,7 @@ int arithmetic(){
 	cout<<endl;
 
 	while (true) {
-		cout<<"Encode or Decode?\n\t1. encode\n\t2.decode";
+		cout<<"Encode or Decode?\n\t1. encode\n\t2.decode\n";
 		string command;
 		cin >> command;
 		if (command == "encode" || command == "1") {
