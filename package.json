@@ -1,0 +1,28 @@
+{
+  "name": "math3411-toolbox",
+  "version": "1.0.0",
+  "description": "A small project for my math3411 exam",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dammshine/Math3411-Toolbox.git"
+  },
+  "type": "module",
+  "author": "David Zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dammshine/Math3411-Toolbox/issues"
+  },
+  "homepage": "https://github.com/Dammshine/Math3411-Toolbox#readme",
+  "dependencies": {
+    "fractional": "^1.0.0",
+    "jest": "^29.2.2",
+    "mathjs": "^11.3.1"
+  }
+}

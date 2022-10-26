@@ -10,8 +10,8 @@ export function getAverageLength(huffmanScheme) {
   for (let [index, str] of Object.entries(huffmanScheme.encoding)) {
     sumLength += (str.length * huffmanScheme.probabilities[index]);
   }
-  
-  return getFraction(sumLength.toFixed(6));
+  console.log(sumLength);
+  return getFraction(sumLength.toFixed(8));
 }
 
 export function getFraction(decimal) {
@@ -25,6 +25,7 @@ export function getIndexEncoding(huffmanScheme, str) {
 
 import {huffmanScheme} from './huffman.js'
 
-/* let scheme = huffmanScheme([0.3, 0.2, 0.15, 0.05, 0.1, 0.1, 0.075, 0.025], 2);
-console.log(getAverageLength(scheme)); 
-console.log(getIndexEncoding(scheme, 's2'));  */
+/* let scheme = huffmanScheme([2/13, 2/13, 2/13, 2/13, 2/13, 2/13, 1/13], 4);
+console.log(scheme); */
+/* console.log(getAverageLength(scheme));  */
+/*console.log(getIndexEncoding(scheme, 's2'));  */

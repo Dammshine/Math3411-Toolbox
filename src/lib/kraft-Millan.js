@@ -1,4 +1,5 @@
 import * as Math from 'mathjs';
+import { i, to } from 'mathjs';
 const { eigs, multiply, column, transpose, fraction } = Math;
 
 export function calKraftMillan(lens) {
@@ -24,3 +25,5 @@ export function findMissing(lens) {
 }
 
 console.log(findMissing([1,2,3,4,5,7]));
+
+

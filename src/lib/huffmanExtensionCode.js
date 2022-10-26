@@ -42,5 +42,5 @@ export function huffmanExtension(probabilities, extension, radix) {
   return huffmanScheme(finalProbabilities, radix, finalCode);
 }
 
-/* let scheme = huffmanExtension([0.75, 0.25], 3, 3);
-console.log(getIndexEncoding(scheme, 's2s2s2')); */
+let scheme = huffmanExtension([0.80, 0.20], 2, 3);
+console.log(getIndexEncoding(scheme, 's2s2'));
