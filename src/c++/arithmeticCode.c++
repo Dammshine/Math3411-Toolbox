@@ -40,18 +40,19 @@ string decoding(unordered_map<char, node> arr, double code_word, int len){
 		cout<<ch<<"\t"<<arr[ch].range_from<<"\t\t"<<arr[ch].range_to<<endl;
 		text+= ch;
 		j++;
+		if (ch == '!') break;
 	}
 	return text;
 }
 
-int main(){
+int arithmetic(){
 	int n;
 	cout<<"Enter number of characters: ";
 	cin>>n;
 	unordered_map<char, node> arr;
 	vector<char> ar;
 	double range_from= 0;
-	cout<<"Enter probability of each character:\n";
+	cout<<"Enter probability of each character (!indicate break):\n";
 	for(int i=0; i<n; i++){
 		char ch;
 		cin>>ch;
@@ -68,12 +69,28 @@ int main(){
 		cout<<ch<<"\t"<<arr[ch].prob<<"\t\t"<<arr[ch].range_from<<"\t\t"<<arr[ch].range_to<<endl;
 	}
 	cout<<endl;
-	string s;
-	cout<<"Enter text: ";
-	cin>>s;
-	double code_word= encoding(arr, s);
-	cout<<"Code word for "<<s<<" is: "<<code_word<<endl;
-	string text= decoding(arr, code_word, s.size());
-	cout<<"Text for "<<code_word<<" is: "<<text<<endl;
+
+	while (true) {
+		cout<<"Encode or Decode?\n\t1. encode\n\t2.decode";
+		string command;
+		cin >> command;
+		if (command == "encode" || command == "1") {
+			cout<<"Enter text: ";
+			string s;
+			cin>>s;
+			double code_word= encoding(arr, s);
+			cout<<"Code word for "<<s<<" is: "<<code_word<<endl;
+			string text= decoding(arr, code_word, s.size());
+			cout<<"Text for "<<code_word<<" is: "<<text<<endl;
+		} else if (command == "decode" || command == "2") {
+			cout<<"Enter code: ";
+			double code_word;
+			cin >> code_word;
+			string text= decoding(arr, code_word, 10);
+			cout<<"Text for "<<code_word<<" is: "<<text<<endl;
+		}
+	}
+	
+	
 
 }

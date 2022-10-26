@@ -119,7 +119,7 @@ string LZ77(string input, int option);
 string LZ78(string input, int option);
 string LZW(string input, int option);
 
-int main()
+int lz78()
 {
 	string input, result, method_text;
 	int method, option, option2;

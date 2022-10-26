@@ -30,12 +30,11 @@ string commaCodeDecode(string code, int len) {
         else if (i == len) vs.push_back(std::string(len, '1'));
         else vs.push_back("1" + vs[vs.size() - 1]);
     }
-    /* for (auto i : vs) cout << i << endl; */
+    for (auto i : vs) cout << i << endl;
 
     return commaCodeDecodeHelper(code, 0, vs);
 }
 
-int main() {
-    //                     code                len
-    cout << commaCodeDecode("111111101100110", 4);
-}
+/* int main() {
+    cout << commaCodeDecode("01110111111101111", 4);
+} */

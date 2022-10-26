@@ -40,8 +40,8 @@ export function getAverageLengthFromMarkov(matrix, equlibrumVec, radix = 2, prec
 }
 
 
-console.log(getAverageLengthFromMarkov([
+/* console.log(getAverageLengthFromMarkov([
   [7/10 , 3/5 , 1/2 ],
   [1/10, 3/10, 1/10],
   [1/5 , 1/10, 2/5 ],
-], [41/64, 1/8, 15/64], 2, 6));
+], [41/64, 1/8, 15/64], 2, 6)); */
