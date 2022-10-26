@@ -1,6 +1,7 @@
 #include<iostream>
 #include<unordered_map>
 #include<vector>
+#include "Windows.h"
 using namespace std;
 
 struct node{
@@ -71,7 +72,8 @@ int arithmetic(){
 	cout<<endl;
 
 	while (true) {
-		cout<<"Encode or Decode?\n\t1. encode\n\t2.decode\n";
+		system("cls");
+		cout<<"\n\nEncode or Decode?\n\t1. encode\n\t2. decode\n";
 		string command;
 		cin >> command;
 		if (command == "encode" || command == "1") {
