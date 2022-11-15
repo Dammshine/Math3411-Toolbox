@@ -1,4 +1,6 @@
 from ultiFunc import calculate_len_from_fano
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
 
 class CodeScheme():
     _probs = None
@@ -95,7 +97,7 @@ class ShannonFano(CodeScheme):
             if checkRe != None:
                 return checkRe
         
-        return Exception("There is an error")
+        return None
 
     def __processCode__(self):
         if self.__scheme != None:
@@ -122,9 +124,7 @@ class ShannonFano(CodeScheme):
     ShannonFano
     """
     def generateCodeScheme(self):
-        return self.__processCode__(self)
+        return self.__processCode__()
 
-shannon = ShannonFano([0.3, 0.3, 0.3, 0.1], 2)
-code = shannon.__processCode__()
 
 
