@@ -74,7 +74,7 @@ class HuffmanCodeScheme(CodeScheme):
     Huffman coding scheme
     """
     def generateCodeScheme(self):
-        return self.__processCode__(self)
+        return self.__processCode__()
 
 class ShannonFano(CodeScheme):
     __scheme = None
@@ -127,4 +127,7 @@ class ShannonFano(CodeScheme):
         return self.__processCode__()
 
 
+
+""" i = ExtensionShannonFano([1], 2,3)
+print(i.generateCodeScheme()) """
 

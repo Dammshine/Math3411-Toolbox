@@ -41,6 +41,27 @@ def getDecoding(code : CodeScheme, decoding: str) -> str:
     # Can't be handled
     return None
 
-shannon = ShannonFano([0.3, 0.3, 0.3, 0.1], 2)
-print(getDecoding(shannon, '0000'))
+"""
+Given a code scheme, print it scheme more gracefully?
+"""
+def printCode(code : CodeScheme) -> str:
+    # Parse encoding String s
+    scheme = code.generateCodeScheme()
+    beauti = {}
+    for coding in scheme:
+        beauti[coding['var']] = coding['codeword']
+    
+    print(beauti)
 
+"""
+Given a code scheme, print it scheme with probability toomore gracefully?
+"""
+def printCodeWithProb(code : CodeScheme) -> str:
+    # Parse encoding String s
+    scheme = code.generateCodeScheme()
+    beauti = {}
+    for coding in scheme:
+        beauti[coding['var']] = [coding['codeword'], coding['prob']]
+    
+    # Can't be handled
+    print(beauti)

@@ -19,7 +19,7 @@ Calculating invertible units
 def get_inver_units(m: int) -> int:
     # Is invertible if gcd(a, m) != 1
     count = []
-    for i in range(2, m):
+    for i in range(1, m):
         if math.gcd(i, m) == 1:
             count += [i]
     return count
@@ -46,9 +46,11 @@ def find_order(num : int, base: int) -> int:
     if num > base: 
         return None
     
+    #count = 0
     for i in range(1, base):
-        if num ** i % base == 1:
+        if (num ** i) % base == 1:
             return i
+        #count += 1
 
     return None
 
@@ -63,4 +65,3 @@ def find_factor_fermet(num: int)-> list[int]:
             return [t - math.isqrt(s), t + math.isqrt(s)]
     return 
 
-print(find_factor_fermet(78793))
