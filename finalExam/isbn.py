@@ -11,5 +11,6 @@ def isbnCheck(s : str):
     
     return sum % 11 == 0
 
-print(isbnCheck("0909117064"))
+
+# print(isbnCheck("0909117064"))
 
