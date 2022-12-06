@@ -1,15 +1,21 @@
 ## 3411 Small Project
 This project will includes the following
-1. Calculating huffman encoding scheme
-    a. Input: Array of probability, correspond to it's index.
-    b. Output: A huffman encoding scheme for the input.
-    Ultility function for the output
-        getAverageLength(Huffman scheme): number
-        getIndexEncoding(Huffman scheme, number index): string
-2. Calculate extension for huffman code
 
-## Project Plan
-1. Finish essential functionality and store in src
-2. Support terminal GUI
-3. Support website
+#### Encoding Section
+1. Huffman Coding
+2. Shannon-Fano Coding
+3. Extension Code
+4. Markov
+
+#### Cipher Dicipher
+1. ISBN
+2. RSA
+3. Periodic Encoding, non-periodic encoding scheme
+4. Algebratic Ciphering
+
+#### Information Theory
+1. Entropy of information
+2. Binary Channel simulation
+3. Modular arithmetic
+4. Prime number algorithm
 
